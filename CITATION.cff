@@ -3,6 +3,8 @@ message: "If you use this code or data, please cite it as below."
 title: "EA-IT2-UGF: code and data for 'Does Explanation-Based Screening Improve LLM-Based Fuzzy Forecasts of Wind-Farm Availability? A Controlled Test'"
 type: software
 version: 1.0.0
+doi: "10.5281/zenodo.24483323"
+date-released: "2026-11-23"
 license: MIT
 authors:
   - family-names: "Bhardwaj"

@@ -4,6 +4,9 @@ Code, derived data and outputs for the article
 
 > Bhardwaj L, Sharma MK. *Does Explanation-Based Screening Improve LLM-Based Fuzzy Forecasts of Wind-Farm Availability? A Controlled Test* (manuscript, 2026).
 
+Archived on Zenodo: [doi:10.5281/zenodo.24483323](https://doi.org/10.5281/zenodo.24483323) (v1.0.0; all versions:
+[doi:10.5281/zenodo.24483322](https://doi.org/10.5281/zenodo.24483322)).
+
 The study asks whether screening large language model (LLM) health ratings of wind turbines by their explanations improves
 next-month availability forecasts beyond unscreened ratings and beyond random removal of the same number of ratings. An LLM
 (Phi-3.5-mini) rates each turbine from monthly condition reports in three wordings, exact Shapley values measure how much of each
