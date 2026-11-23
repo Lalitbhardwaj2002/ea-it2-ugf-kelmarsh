@@ -1,13 +1,15 @@
 """Upload the replication package to Zenodo as a DRAFT. Nothing is published unless you add --publish.
 
-    set ZENODO_TOKEN=<your personal access token>        (PowerShell: $env:ZENODO_TOKEN = "<token>")
+    set ZENODO_TOKEN=<your personal access token>        (PowerShell: $env:ZENODO_TOKEN = "<token>"; Git Bash: export ZENODO_TOKEN=<token>)
     python tools/zenodo_upload.py                         creates a draft, reserves its DOI, uploads the zip, prints both
     python tools/zenodo_upload.py --sandbox               the same on sandbox.zenodo.org (a test site; needs a sandbox token)
     python tools/zenodo_upload.py --publish <id>          publishes the draft with that id (cannot be undone)
 
 Create the token at https://zenodo.org/account/settings/applications/tokens/new/ with the scopes deposit:write and deposit:actions.
-The token is read from the environment only; it is never written to a file. Run this from the package folder: the metadata come from
-.zenodo.json and the zip holds every file of the folder except .git. Only the standard library is used.
+The token is read from the environment only; it is never written to a file. The metadata come from .zenodo.json, and the zip holds
+the package files only (no hidden folders, caches or generated figures). Run tools/make_release.py first so the folder is clean.
+Use one route per version: if the GitHub repository is switched on in Zenodo, a GitHub release already makes the record and its DOI.
+Only the standard library is used.
 """
 import argparse, io, json, os, sys, urllib.error, urllib.request, zipfile
 
@@ -28,7 +30,8 @@ def package_zip():
     buf, n = io.BytesIO(), 0
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         for base, dirs, files in os.walk(HERE):
-            dirs[:] = [d for d in dirs if d not in (".git", "__pycache__")]
+            dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"
+                       and os.path.relpath(os.path.join(base, d), HERE).replace(os.sep, "/") not in ("paper/figures", "paper/figures_sncs")]
             for f in sorted(files):
                 if f.endswith(".zip"):
                     continue
@@ -53,12 +56,13 @@ def main():
         return
     meta = json.load(open(os.path.join(HERE, ".zenodo.json"), encoding="utf-8"))
     meta["prereserve_doi"] = True
-    dep = call("POST", f"{api}/deposit/depositions", token, {"metadata": meta})
     data, n = package_zip()
+    dep = call("POST", f"{api}/deposit/depositions", token, {"metadata": meta})
+    print(f"Draft {dep['id']} created.")
     name = f"ea-it2-ugf-kelmarsh-v{meta.get('version', '1.0.0')}.zip"
     call("PUT", f"{dep['links']['bucket']}/{name}", token, data, "application/octet-stream")
     doi = dep.get("metadata", {}).get("prereserve_doi", {}).get("doi")
-    print(f"Draft {dep['id']} created with {name} ({n} files, {len(data) / 1e6:.1f} MB).")
+    print(f"Uploaded {name} ({n} files, {len(data) / 1e6:.1f} MB).")
     print(f"Reserved DOI: {doi}   (put it in the manuscript's Data and Code availability statements)")
     print(f"Check it here: {dep['links']['html']}")
     print(f"Publish when ready: python tools/zenodo_upload.py{' --sandbox' if a.sandbox else ''} --publish {dep['id']}")

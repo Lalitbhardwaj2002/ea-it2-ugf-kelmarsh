@@ -1,4 +1,4 @@
-"""Build kaggle_kelmarsh.ipynb: the one-click LLM run for the Kelmarsh conference paper, with the current code embedded.
+"""Build kaggle_kelmarsh.ipynb: the one-click LLM run of the Kelmarsh study, with the current code embedded.
 
     python tools/build_kelmarsh_notebook.py
 """
@@ -18,15 +18,15 @@ md = lambda s: {"cell_type": "markdown", "metadata": {}, "source": s}
 code = lambda s: {"cell_type": "code", "metadata": {}, "execution_count": None, "outputs": [], "source": s}
 
 cells = [
-    md("""# Kelmarsh LLM run (conference paper)
+    md("""# Kelmarsh LLM run
 
 1. In the right panel, open **Settings** and set **Accelerator = GPU T4 x2** and **Internet = On**.
 2. Click **Save Version**, choose **Save & Run All (Commit)**, then click Save. You can close the browser.
-3. When it finishes, open the version, go to the **Output** tab, download `kelmarsh_results.zip` and unzip it into `results/` of this package.
+3. When it finishes, open the version, go to the **Output** tab, download `kelmarsh_results.zip` and unzip it in the package folder (it holds `results/` and `logs/`).
 
 It rates 552 turbine-months in 3 wordings each (1,656 ratings) with Phi-3.5-mini. The 1,278 ratings from January 2019 on are also explained with exact
-Shapley values and the LLM's own rationale; the first two years only train the link and need the rating alone. It takes about 7 hours on two GPUs, and
-stops by itself at 11 hours. Every finished rating is saved as it goes.
+Shapley values and the LLM's own rationale; the first two years only train the link and need the rating alone. It needs more than one Kaggle session: it stops by itself at
+11 hours (the archived run had 1,562 of 1,656 ratings by then), and a second run with the first output attached finishes it. Every finished rating is saved as it goes.
 
 If a run is cut short: add its `kelmarsh_results.zip` to the notebook as a dataset (**Add Input**) and run again. Finished ratings are reused.
 """),
@@ -97,6 +97,6 @@ display(HTML(f'<a download="kelmarsh_results.zip" href="data:application/zip;bas
 ]
 nb = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
                                    "language_info": {"name": "python"}}, "nbformat": 4, "nbformat_minor": 5}
-with open(os.path.join(ROOT, "kaggle_kelmarsh.ipynb"), "w", encoding="utf-8") as f:
+with open(os.path.join(ROOT, "kaggle_kelmarsh.ipynb"), "w", encoding="utf-8", newline="\n") as f:
     json.dump(nb, f, indent=1)
 print("wrote kaggle_kelmarsh.ipynb", f"({len(FILES)} files embedded, {len(code_zip) // 1024} KB)")

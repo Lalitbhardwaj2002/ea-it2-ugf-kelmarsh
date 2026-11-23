@@ -1,10 +1,10 @@
-"""Figures of the conference article, written to paper/figures/. CPU only; none of them needs the LLM results.
+"""Figures 1-4 of the article, written to paper/figures/. CPU only; none of them needs the LLM results.
 
     python tools/make_article_figures.py
 
 Fig. 1 methodology flowchart, Fig. 2 operating-state shares, Fig. 3 UGF against observed availability, Fig. 4 persistence.
-Each figure is also written as paper/figures_sncs/FigN.tif (600 dpi, LZW) for the journal submission (SN Computer Science wants files
-named Fig1, Fig2, ... and does not rely on colour alone, so the series also differ by hatching, line style or marker).
+Each figure is also written as paper/figures_sncs/FigN.tif (600 dpi, LZW) for journal submission (files named Fig1, Fig2, ...; the
+series also differ by hatching, line style or marker, so colour is not needed).
 """
 import os
 import numpy as np

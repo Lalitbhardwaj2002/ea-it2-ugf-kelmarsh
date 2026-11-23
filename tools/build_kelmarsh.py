@@ -2,7 +2,7 @@
 
     python tools/build_kelmarsh.py [--derived E:\\xfmss_data\\derived] [--full 0.8]
 
-Reads the output of tools/extract_kelmarsh.py and writes (raw data stays on E:, these small files stay in the project):
+Reads the output of tools/extract_kelmarsh.py and writes (the raw data stay outside the package; these small files are written under data/):
     data/real/kelmarsh_shares.csv     share of time stopped / derated / full per turbine and month
     data/real/kelmarsh_features.csv   monthly condition indicators per turbine
     data/real/kelmarsh_plant.csv      observed plant availability against the UGF, per month and demand

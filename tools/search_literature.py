@@ -1,9 +1,9 @@
-"""Reproducible literature search behind the novelty statement of the conference article.
+"""Reproducible literature search behind the novelty statement of the article.
 
     python tools/search_literature.py
 
 Searches titles and abstracts in OpenAlex, and all fields in arXiv, for each pair of phrases, and writes every record found to
-paper/literature_search.csv for screening. Run date and counts go in Section 2.5 of the article.
+paper/literature_search.csv for screening. The run date and counts are reported in the article (Research Gaps and Objectives).
 """
 import csv, datetime, os, re, sys, time, urllib.parse, urllib.request
 import json

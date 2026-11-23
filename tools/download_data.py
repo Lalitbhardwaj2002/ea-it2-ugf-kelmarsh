@@ -7,7 +7,7 @@ Hill of Towie (CC BY 4.0, doi:10.5281/zenodo.22662930): documentation, operator-
 10-minute SCADA + alarm zips 2016-2026 (~15.3 GB; 2026 = Jan-Apr). Not downloaded: LiDAR, the LiDAR deployment
 reports, the 1 Hz turbine fastlog and the sensor photo.
 The raw data is kept outside the project folder (default: $XFMSS_DATA, else E:\\xfmss_data) so it never ends up in
-the code release; drive C: has too little free space for it.
+the code release.
 """
 import argparse, hashlib, json, os, re, sys, time, urllib.request
 

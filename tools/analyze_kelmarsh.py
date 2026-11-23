@@ -1,7 +1,7 @@
-"""Results of the Kelmarsh conference paper. CPU only.
+"""All results of the Kelmarsh study (O1-O3). CPU only.
 
     python tools/analyze_kelmarsh.py results/kelmarsh_shard0.jsonl results/kelmarsh_shard1.jsonl --out analysis_kelmarsh
-    python tools/analyze_kelmarsh.py --baselines-only --out analysis_kelmarsh
+    python tools/analyze_kelmarsh.py --baselines-only --out analysis_baselines
 
 O1: operating shares and the UGF against observed plant availability (needs no LLM).
 O2: does the LLM rating of one month predict the operating states of the next month better than persistence, the mean of earlier
@@ -195,7 +195,8 @@ def turbine_score(fz, par, truth, k_cut):
 
 
 def gate_row(rows, test, links, t, m, q, within=False, draws=50):
-    """audited against matched random removal at turbine level, for one gate"""
+    """audited against matched random removal at turbine level, for one gate (50 draws, seed 1; the 70 % row therefore differs slightly
+    from the main test, which uses 200 draws)"""
     k_cut = int(round(CUT * (len(ALPHAS) - 1)))
     rng = np.random.default_rng(1)
     one = []

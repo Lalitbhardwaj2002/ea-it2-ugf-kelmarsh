@@ -11,9 +11,25 @@ authors:
   - family-names: "Sharma"
     given-names: "M. K."
     affiliation: "Department of Mathematics, Chaudhary Charan Singh University, Meerut, India"
+repository-code: "https://github.com/Lalitbhardwaj2002/ea-it2-ugf-kelmarsh"
 keywords:
   - large language models
   - explainable AI
+  - Shapley values
   - interval type-2 fuzzy sets
   - universal generating function
+  - multi-state system reliability
   - wind farm availability
+  - Kelmarsh
+references:
+  - type: dataset
+    title: "Kelmarsh wind farm data"
+    authors:
+      - family-names: "Plumley"
+        given-names: "C."
+      - family-names: "Takeuchi"
+        given-names: "R."
+    publisher:
+      name: "Zenodo"
+    year: 2025
+    doi: "10.5281/zenodo.16807551"

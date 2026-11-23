@@ -1,6 +1,6 @@
 numpy
 scipy
-pandas
+pandas>=2.2
 scikit-learn
 matplotlib
 tabulate
