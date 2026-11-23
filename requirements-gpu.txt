@@ -1,0 +1,9 @@
+torch
+transformers>=4.56
+accelerate
+shap>=0.48
+inseq==0.7.1
+numpy
+scipy
+pandas
+scikit-learn

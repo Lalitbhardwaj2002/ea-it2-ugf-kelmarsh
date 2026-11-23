@@ -1,0 +1,15 @@
+topic,source,year,title,id
+LLM with UGF,OpenAlex,2025,A recursive algorithm for reliability evaluation of multi-state hierarchical systems with stochastic dependent components,https://doi.org/10.1016/j.ress.2025.111653
+LLM with IT2,OpenAlex,2025,TRAFFIC SIGNAL CONTROL AT DISPLACED LEFT-TURN INTERSECTIONS USING AN LLM-BASED ACTOR-CRITIC ALGORITHM,https://doi.org/10.1016/j.eswa.2025.130555
+LLM with IT2,OpenAlex,2026,PERSPECTIVES OF USING ARTIFICIAL INTELLIGENCE TECHNOLOGIES IN THE WATER INDUSTRY,https://doi.org/10.20535/2218-930012026350314
+LLM with IT2,OpenAlex,2026,Calibrating LLM Uncertainty Words to Human Readers with Interval Type-2 Fuzzy Sets (code),https://doi.org/10.5281/zenodo.23656987
+LLM with IT2,OpenAlex,2026,Interval-Valued Epistemic Reasoning for Hallucination-Aware Language Models,https://doi.org/10.1109/fuzz69877.2026.11626347
+LLM with multi-state reliability,OpenAlex,2026,Dynamic opportunistic maintenance optimization for multi-state systems with overlapping maintenance time and duration-dependent costs,https://doi.org/10.1016/j.ress.2026.112198
+LLM with multi-state reliability,arXiv,2026,PatternFormer: Learning Multiple Solution Patterns in Reaction--Diffusion Systems,http://arxiv.org/abs/2608.12286v1
+Explanation screening with wind reliability,OpenAlex,2025,Damage identification of wind turbine blade based on large language model and a novel interpretable Mamba model,https://doi.org/10.1088/1361-6501/ae2287
+Explanation screening with wind reliability,OpenAlex,2026,Short-term Wind Power Forecasting and Interpretability Research Based on Pre-trained Large Language Models,https://openalex.org/W7166624707
+Explanation screening with wind reliability,OpenAlex,2026,"Large Language Models for Wind Turbine Fault Diagnosis: A Review of Enabling Technologies, Component-Level Applications, and Future Perspectives",https://doi.org/10.3390/en19205020
+Explanation screening with wind reliability,OpenAlex,2026,Interpretable Multilevel Analysis of Wind Turbine Operation Data via a Recursive Unsupervised and LLM-Assisted Framework,https://doi.org/10.1007/978-3-032-29254-4_14
+Explanation screening with wind reliability,OpenAlex,2026,A Web Engineering Method for AI-Assisted Knowledge Graph Construction in Industrial Domains,https://doi.org/10.1007/978-3-032-29372-5_26
+Explanation screening with wind reliability,OpenAlex,2025,A Knowledge-Recommendation Approach to Enhance Cognitive Efficacy in Engineering Design,https://doi.org/10.1109/iciea65512.2025.11148453
+Explanation screening with wind reliability,OpenAlex,2025,Optimizing Performance of Equipment Fleets Under Dynamic Operating Conditions: Generalizable Shift Detection and Multimodal LLM-Assisted State Labeling,https://doi.org/10.3390/su18010132

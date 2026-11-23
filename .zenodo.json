@@ -1,0 +1,36 @@
+{
+  "title": "EA-IT2-UGF: code and data for \"Does Explanation-Based Screening Improve LLM-Based Fuzzy Forecasts of Wind-Farm Availability? A Controlled Test\"",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "description": "<p>Code, derived data, LLM outputs and analysis outputs that reproduce every number, table and figure of the article \"Does Explanation-Based Screening Improve LLM-Based Fuzzy Forecasts of Wind-Farm Availability? A Controlled Test\" (Bhardwaj and Sharma). An LLM (Phi-3.5-mini) rates the six Kelmarsh wind turbines from monthly condition reports, exact Shapley values measure the share of each rating that comes from irrelevant sentences, an audit gate removes the worst wordings, and interval type-2 fuzzy health numbers are propagated exactly through a universal generating function into next-month availability bands, which are tested against matched random removal.</p><p>Code: MIT licence. The derived data and outputs are based on the Kelmarsh wind farm data (Plumley and Takeuchi, 2025, doi:10.5281/zenodo.16807551, CC BY 4.0) and are released under CC BY 4.0 with that attribution.</p>",
+  "creators": [
+    {
+      "name": "Bhardwaj, Lalit",
+      "affiliation": "Department of Mathematics, Chaudhary Charan Singh University, Meerut, India"
+    },
+    {
+      "name": "Sharma, M. K.",
+      "affiliation": "Department of Mathematics, Chaudhary Charan Singh University, Meerut, India"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "large language models",
+    "explainable AI",
+    "Shapley values",
+    "interval type-2 fuzzy sets",
+    "universal generating function",
+    "multi-state system reliability",
+    "wind farm availability",
+    "Kelmarsh"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.16807551",
+      "relation": "isDerivedFrom",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    }
+  ]
+}

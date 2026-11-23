@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "EA-IT2-UGF: code and data for 'Does Explanation-Based Screening Improve LLM-Based Fuzzy Forecasts of Wind-Farm Availability? A Controlled Test'"
+type: software
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: "Bhardwaj"
+    given-names: "Lalit"
+    affiliation: "Department of Mathematics, Chaudhary Charan Singh University, Meerut, India"
+  - family-names: "Sharma"
+    given-names: "M. K."
+    affiliation: "Department of Mathematics, Chaudhary Charan Singh University, Meerut, India"
+keywords:
+  - large language models
+  - explainable AI
+  - interval type-2 fuzzy sets
+  - universal generating function
+  - wind farm availability
