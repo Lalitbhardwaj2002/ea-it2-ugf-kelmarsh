@@ -31,7 +31,7 @@ def package_zip():
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         for base, dirs, files in os.walk(HERE):
             dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"
-                       and os.path.relpath(os.path.join(base, d), HERE).replace(os.sep, "/") not in ("paper/figures", "paper/figures_sncs")]
+                       and os.path.relpath(os.path.join(base, d), HERE).replace(os.sep, "/") not in ("paper/figures_sncs",)]
             for f in sorted(files):
                 if f.endswith(".zip"):
                     continue

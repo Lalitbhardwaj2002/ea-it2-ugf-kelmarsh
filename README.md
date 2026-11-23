@@ -4,8 +4,8 @@ Code, derived data and outputs for the article
 
 > Bhardwaj L, Sharma MK. *Does Explanation-Based Screening Improve LLM-Based Fuzzy Forecasts of Wind-Farm Availability? A Controlled Test* (manuscript, 2026).
 
-Archived on Zenodo: [doi:10.5281/zenodo.24483323](https://doi.org/10.5281/zenodo.24483323) (v1.0.0; all versions:
-[doi:10.5281/zenodo.24483322](https://doi.org/10.5281/zenodo.24483322)).
+Archived on Zenodo: [doi:10.5281/zenodo.24483322](https://doi.org/10.5281/zenodo.24483322) (all versions; each release has its own
+DOI, listed on the Zenodo page).
 
 The study asks whether screening large language model (LLM) health ratings of wind turbines by their explanations improves
 next-month availability forecasts beyond unscreened ratings and beyond random removal of the same number of ratings. An LLM
@@ -27,6 +27,8 @@ years of Kelmarsh data the gate narrowed the bands by 10 % but did not beat matc
 | `tools/analyze_kelmarsh.py` | All results (O1-O3) -> `analysis_kelmarsh/` |
 | `tools/check_link_recovery.py` | Simulation of slope recovery for the rating-to-state link |
 | `tools/make_article_figures.py` | Figures 1-4 of the article |
+| `tools/make_tables.py` | Tables 4-7 of the article (the result tables) from `analysis_kelmarsh/` -> `paper/tables/` |
+| `paper/figures/`, `paper/tables/` | The figures and result tables of the article, as archived (shown below) |
 | `tools/search_literature.py`, `paper/literature_search.csv` | The novelty search (OpenAlex and arXiv, 4 Nov 2026) |
 | `data/kelmarsh.json` | 92 evidence months x 6 turbines: eight sentences in three wordings, outcome shares |
 | `data/real/` | Monthly state shares per turbine, plant series, report facts, derived from the Kelmarsh data (`*_full90.csv`: full state at 90 % instead of 80 %, a sensitivity case; `zenodo_records/`: metadata of the source record) |
@@ -45,6 +47,7 @@ pip install -r requirements.txt
 python tools/analyze_kelmarsh.py results/kelmarsh_shard0.jsonl results/kelmarsh_shard1.jsonl --out analysis_kelmarsh
 python tools/check_link_recovery.py
 python tools/make_article_figures.py
+python tools/make_tables.py
 ```
 
 `python tools/analyze_kelmarsh.py --baselines-only --out analysis_baselines` gives the results that need no LLM (O1, persistence
@@ -72,6 +75,31 @@ archived run (Kaggle, November 2026) used inseq 0.7.1 and the then-current trans
 unchanged. Their comments also mention a synthetic benchmark (`data/benchmark.json`), a pre-flight script (`check_methods.py`) and
 Inseq explainers that are not part of this package. Always pass `--bench data/kelmarsh.json`: if the `--bench` file does not exist,
 `run_experiment.py` creates and rates a synthetic benchmark instead.
+
+## Figures and tables
+
+The figures of the article are in `paper/figures/` (made by `tools/make_article_figures.py`) and its result tables, Tables 4-7, are in
+`paper/tables/` as CSV files and as one page, [`paper/tables/tables.md`](paper/tables/tables.md) (made by `tools/make_tables.py`).
+Tables 1-3 of the article describe the literature, the data and the compared methods and are not computed.
+
+![Fig. 1](paper/figures/fig1_methodology.png)
+
+**Fig. 1** Flowchart of the proposed methodology. C1-C3 mark the contributions of the article.
+
+![Fig. 2](paper/figures/fig2_states.png)
+
+**Fig. 2** Stopped and derated shares of plant-valid intervals, (a) by month and (b) by turbine. The remainder of each bar up to 100 % is
+full output. August and September 2017 are left out.
+
+![Fig. 3](paper/figures/fig3_ugf_check.png)
+
+**Fig. 3** UGF against observed availability. (a) Each month at 90 % demand. (b) Mean over the months by demand level. Shaded: demand
+levels at which three states are no longer enough.
+
+![Fig. 4](paper/figures/fig4_persistence.png)
+
+**Fig. 4** (a) Stopped and (b) derated share in one month against the share of the same turbine in the next month, for 552 pairs. The
+dashed line marks equal shares.
 
 ## Data and licences
 

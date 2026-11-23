@@ -1,0 +1,6 @@
+Band,Turbine loss,Turbine width,Turbine hit,Plant loss,Plant error,Plant width,Plant hit
+Plain IT2-UGF,0.1113,0.038,0.37,0.382,0.116,0.102,0.28
+"EA-IT2-UGF, Shapley gate",0.1137,0.034,0.33,0.389,0.116,0.092,0.23
+Random-drop (Shapley count),0.1114,0.033,0.32,0.387,0.115,0.088,0.22
+"EA-IT2-UGF, self-rationale gate",0.1113,0.038,0.37,0.382,0.116,0.102,0.28
+Random-drop (self-rationale count),0.1113,0.038,0.37,0.382,0.116,0.102,0.28
